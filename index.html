@@ -3,455 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Suraj Kumar | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --dark-color: #1e293b;
-            --light-color: #f8fafc;
-            --gray-color: #64748b;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 100px;
-            display: flex;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 50px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-
-        .hero h1 span {
-            color: var(--primary-color);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--gray-color);
-            margin-bottom: 30px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 50%;
-            box-shadow: var(--shadow);
-            width: 350px;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .skill-tag {
-            background-color: #e0f2fe;
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-info {
-            padding: 20px;
-        }
-
-        .portfolio-info h3 {
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-            width: 50%;
-            padding: 0 40px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-date {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #e0f2fe;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 120px 0 60px;
-            }
-            
-            .hero-content {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .about-content, .contact-content {
-                flex-direction: column;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                left: 0 !important;
-                padding-left: 80px;
-                padding-right: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: var(--shadow);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -481,10 +35,10 @@
                 <h2>Web Developer & UI/UX Designer</h2>
                 <p>I create beautiful, functional websites and applications with a focus on user experience and clean code. Passionate about turning ideas into reality through technology.</p>
                 <a href="#portfolio" class="btn">View My Work</a>
-                <a href="#contact" class="btn" style="margin-left: 15px; background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color);">Contact Me</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Profile Picture">
+                <img src="dp.jpg" alt="Suraj Kumar - Web Developer">
             </div>
         </div>
     </section>
@@ -497,7 +51,7 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hello! I'm Alex, a passionate web developer</h3>
+                    <h3>Hello! I'm Suraj, a passionate web developer</h3>
                     <p>With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and applications. I'm proficient in modern front-end technologies and have a strong eye for design.</p>
                     <p>My approach combines technical expertise with creative thinking to deliver solutions that not only meet but exceed client expectations. I believe in writing clean, maintainable code and creating intuitive user experiences.</p>
                     
@@ -525,31 +79,34 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="E-commerce Website">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="E-commerce Website">
                     </div>
                     <div class="portfolio-info">
                         <h3>E-commerce Platform</h3>
                         <p>Full-featured online store with shopping cart, payment integration, and admin dashboard.</p>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
                 
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Task Management App">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80" alt="Task Management App">
                     </div>
                     <div class="portfolio-info">
                         <h3>Task Management App</h3>
                         <p>Collaborative project management tool with real-time updates and team collaboration features.</p>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
                 
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Travel Blog">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Travel Blog">
                     </div>
                     <div class="portfolio-info">
                         <h3>Travel Blog Platform</h3>
                         <p>Content management system for travel bloggers with map integration and photo galleries.</p>
+                        <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
             </div>
@@ -567,7 +124,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2021 - Present</div>
                         <h3>Senior Web Developer</h3>
-                        <p>Tech Solutions Inc.</p>
+                        <p class="company">Tech Solutions Inc.</p>
                         <p>Lead front-end development for client projects, mentor junior developers, and implement modern web technologies.</p>
                     </div>
                 </div>
@@ -576,7 +133,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2019 - 2021</div>
                         <h3>Web Developer</h3>
-                        <p>Creative Digital Agency</p>
+                        <p class="company">Creative Digital Agency</p>
                         <p>Developed responsive websites and web applications for various clients across multiple industries.</p>
                     </div>
                 </div>
@@ -585,7 +142,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2017 - 2019</div>
                         <h3>Frontend Developer</h3>
-                        <p>StartupXYZ</p>
+                        <p class="company">StartupXYZ</p>
                         <p>Built user interfaces for SaaS products using React and modern CSS frameworks.</p>
                     </div>
                 </div>
@@ -594,7 +151,7 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2013 - 2017</div>
                         <h3>B.S. Computer Science</h3>
-                        <p>University of Technology</p>
+                        <p class="company">University of Technology</p>
                         <p>Graduated with honors, focused on web technologies and human-computer interaction.</p>
                     </div>
                 </div>
@@ -616,7 +173,7 @@
                         </div>
                         <div>
                             <h3>Location</h3>
-                            <p>San Francisco, California</p>
+                            <p>Bhilai, Chhattisgarh</p>
                         </div>
                     </div>
                     
@@ -626,7 +183,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>alex@example.com</p>
+                            <p>surajkumar@google.com</p>
                         </div>
                     </div>
                     
@@ -636,7 +193,17 @@
                         </div>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+91 6205883144</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Availability</h3>
+                            <p>Available for freelance projects</p>
                         </div>
                     </div>
                 </div>
@@ -653,7 +220,7 @@
                             <input type="text" class="form-control" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -666,72 +233,23 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">Portfolio.</div>
+                <div>
+                    <div class="logo">Portfolio.</div>
+                    <p class="footer-tagline">Creating digital experiences that make a difference.</p>
+                </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/suraj-kumar-377005334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Alex Johnson. All Rights Reserved.</p>
+                <p>&copy; <span id="currentYear"></span> Suraj Kumar. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(5px)';
-            } else {
-                header.style.backgroundColor = 'white';
-                header.style.backdropFilter = 'none';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
